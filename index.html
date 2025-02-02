@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Template</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+          <ul>
+            <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#about" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#projects" onclick="navigateTo('projects')">Projects</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank">
+              <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
+            </a>
+            <a href="https://mail.google.com/mail/u/0/" target="_blank">
+                <img class="social-icon" src="image/gmail.png" alt="Gmail" />
+              </a>
+              
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+              <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+            </a>
+          </div>
+          
+        </nav>
+      </header>
+      
+
+      <section id="hero">
+        <div class="text-content">
+          <h1>Hi, I'm <span>Priya</span> </h1>
+          <h2>I'm a Full Stack Developer</h2>
+          <p class="intro-text">A passionate Full-Stack Developer specializing in crafting interactive and professional <br>web applications with a focus on user experience and innovation.</p>
+          <style>
+            .intro-text {
+              font-size: 18px; /* Adjust font size as needed */
+              line-height: 1.6; /* Improve readability */
+              font-weight: 400; /* Set a medium weight for clarity */
+              color: #ffffff; /* White color for dark backgrounds */
+               /* Add some spacing above */
+            }
+            
+          </style>
+          <div class="center-content">
+            <button><a href="#projects" onclick="navigateTo('projects')">View My Projects</a>
+              </button>
+            <a href="image/Priyadharshini_Resume.pdf (1).pdf" download="my-projects.csv" class="download-btn" onclick="changeColorEffect(this)">Download CSV</a>
+            <script>
+              function changeColorEffect(element) {
+                // Temporarily add the "clicked" class to the element
+                element.classList.add("clicked");
+              
+                // Remove the "clicked" class after a delay (e.g., 500ms)
+                setTimeout(() => {
+                  element.classList.remove("clicked");
+                }, 500);
+              }
+              
+            </script>
+          </div>
+          <style>
+            .center-content {
+               padding-left: 500px;
+              flex-direction:row-reverse; 
+              justify-content: center; 
+              align-items: center;
+            }
+            
+          </style>
+        <div class="image-content">
+          <img src="image/image2.jpeg" alt="Saul's Image" />
+        </div>
+      </section>
+      
+
+      <section id="about">
+        <div class="about-container">
+          <!-- Image on the left -->
+          <div class="about-image">
+            <img src="image/image3.jpeg" alt="About Me" />
+          </div>
+      
+          <!-- Content on the right -->
+          <div class="about-content">
+            <h2><span>About</span></h2>
+            <style>
+              .about-content h2 span {
+                color: #940087;
+                text-shadow: 2px 2px 4px #ffffff4d;  /* Add your desired color for the span (e.g., Tomato) */
+                font-weight: bold; 
+              }
+            </style>
+            
+            <p>I am a motivated and detail-oriented Electronics and Communication Engineering student with a passion for full-stack development and innovative problem-solving. I possess hands-on experience in web and software development, AI applications, and hardware-based solutions. As a quick learner and team player, I thrive on leveraging technology to create impactful solutions. My goal is to contribute to dynamic projects that push the boundaries of innovation while enhancing my skills in a challenging environment..</p>
+            
+            <div class="skills-section">
+              <h3><span>My Skills</span></h3>
+              <style>
+                .skills-section h3 span {
+                  color: #940087;
+                  text-shadow: 2px 2px 4px #810072;  /* Add your desired color for the span (e.g., Tomato) */
+                  font-weight: bold; 
+                }
+              </style>
+              <div class="skills-container">
+                  <ul class="skills-column">
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fas fa-code"></i> Web Development
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fas fa-paint-brush"></i> Graphic Design
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-js-square"></i> JavaScript
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-html5"></i> CSS / HTML
+                      </li>
+                  </ul>
+                  <ul class="skills-column">
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-figma"></i> figma
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-python"></i> Python
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fas fa-database"></i> MongoDB
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fas fa-database"></i> SQL
+                      </li>
+                  </ul>
+                  <ul class="skills-column">
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-react"></i> React.js
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-github"></i> Git & GitHub
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fas fa-laptop-code"></i> UI/UX Design
+                      </li>
+                      <li class="skill-item" onclick="toggleUnderline(this)">
+                          <i class="fab fa-node"></i> Node.js
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          
+              </div>
+                 
+          </div>
+        </div>
+      </section>
+      <style>
+        
+        .skills-section {
+          margin-top: 20px;
+          opacity: 0;
+          animation: fade-in 1.5s ease-out forwards;
+          text-align: center;
+        }
+        
+        .skills-section h3 {
+          font-size: 2rem;
+          color: #fff;
+          margin-bottom: 20px;
+        }
+        
+        .skills-container {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap;
+        }
+        
+        .skills-column {
+          list-style-type: none; /* Remove bullet points */
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 200px; /* Adjust width of each column */
+          color: #fff; /* White text color for better visibility */
+        }
+        
+        .skill-item {
+          font-size: 1.2rem;
+          margin: 8px 0;
+          cursor: pointer;
+          position: relative;
+          padding-bottom: 5px;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }      
+      </style>
+   
+
+      <section id="projects" class="projects-section">
+        <h2><span>Projects</span></h2>
+        <style>
+          .projects-section h2 span {
+            color: #940087;
+            text-shadow: 2px 2px 4px #ffffff4d;  /* Add your desired color for the span (e.g., Tomato) */
+            font-weight: bold; 
+          }
+        </style>
+        
+        <div class="projects-container">
+          <!-- Project cards -->
+          <div class="project-card" onclick="navigateTo('https://www.example1.com')">
+            <img src="image/spotify.jpg" alt="Spotify Project" class="project-image">
+            <h3>Spotify</h3>
+            <p>Built with React.js and Tailwind CSS, featuring a responsive UI and seamless music streaming.</p>
+          </div>
+      
+  
+      
+          <div class="project-card" onclick="navigateTo('https://www.example3.com')">
+            <img src="image/youtube2.jpg" alt="YouTube Clone Project" class="project-image">
+            <h3>YouTube Clone</h3>
+            <p>Developed using HTML, CSS, and JavaScript with a dynamic UI, video streaming, search functionality, and content filtering.</p>
+          </div>
+      
+          <div class="project-card" onclick="navigateTo('https://www.example3.com')">
+            <img src="image/openai.webp" alt="OpenAI Project" class="project-image">
+            <h3>OpenAI</h3>
+            <p>A Python script using OpenAI's GPT-3.5 API to create an interactive chatbot tailored to user-defined roles.</p>
+          </div>
+
+          <div class="project-card" onclick="navigateTo('https://www.example2.com')">
+            <img src="image/code2.png" alt="Code Editor Project" class="project-image">
+            <h3>Code Editor</h3>
+            <p>Proficient in creating responsive web applications with HTML5, CSS3, and JavaScript.</p>
+          </div>
+      
+          <div class="project-card" onclick="navigateTo('https://www.example3.com')">
+            <img src="image/vacuum.jpg" alt="Vacuum-Based Toilet Project" class="project-image">
+            <h3>Vacuum-Based Toilet</h3>
+            <p>Designed a system for rural areas to enhance hygiene and water conservation; finalist in Smart India Hackathon (SIH).</p>
+          </div>
+      
+          <div class="project-card" onclick="navigateTo('https://www.example3.com')">
+            <img src="image/knee.jpeg" alt="Knee Pad Project" class="project-image">
+            <h3>Knee Pad Solution</h3>
+            <p>Designed a pain relief solution showcased at Hindusthan Hospital Radiology Exhibit.</p>
+          </div>
+      
+          <div class="project-card" onclick="navigateTo('https://www.example3.com')">
+            <img src="image/digital.jpeg" alt="Digital Courtroom Project" class="project-image">
+            <h3>Digital Courtroom</h3>
+            <p>Created AI-powered virtual lawyer software to streamline legal processes and optimize case management.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <!-- Hire Me Heading -->
+        <h2 class="hire-me-heading">Hire Me</h2>
+      
+        <!-- Hire Me Content -->
+        <div class="hire-me-content">
+          <p class="freelance-work">
+            I am available for freelance work. Feel free to contact me via email or phone for collaborations!
+          </p>
+          <p>Email: <a href="mailto:lathamanonmani70@gmail.com">lathamanonmani70@gmail.com</a></p>
+          <p>Phone: <a href="tel:+91 7845452327">+91 7845452327</a></p>
+        </div>
+      
+        <!-- Contact Container -->
+        <div class="contact-container">
+          <!-- Contact Form -->
+          <div class="contact-form-container">
+            <h2>Contact</h2>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit</button>
+            </form>
+          </div>
+      
+          <!-- Contact Image -->
+          <div class="contact-image-container">
+            <img src="image/image1.jpeg" alt="Contact Image" class="contact-image" />
+          </div>
+        </div>
+      </section>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+      <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+      
+          // Capture form data
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+      
+          // Validate inputs
+          if (!name || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+          }
+      
+          // Prepare data for Excel (the first row will be headers)
+          const data = [
+            ["Name", "Email", "Message"],  // Headers
+            [name, email, message]         // User input data
+          ];
+      
+          // Convert data to a worksheet
+          const worksheet = XLSX.utils.aoa_to_sheet(data);
+          const workbook = XLSX.utils.book_new();
+          XLSX.utils.book_append_sheet(workbook, worksheet, "ContactForm");
+      
+          // Save the workbook as an Excel file
+          XLSX.writeFile(workbook, "ContactForm.xlsx");
+      
+          // Clear the form after submission
+          document.getElementById('contact-form').reset();
+      
+          // Optionally, alert the user that the message has been saved
+          alert("Your message has been saved to an Excel file.");
+        });
+      </script>      
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-container">
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">| GitHub |</a>
+            <a href="mailto:lathamanonmani70@gmail.com">Email</a>
+          </div>
+        </div>
+      </footer>
+       
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,748 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:  #111010; /* Dark background for the header */
+    color: #fff; /* White text for contrast */
+  }
+  
+  nav {
+    display: flex; /* Aligns navigation links and social icons in a row */
+    align-items: center; /* Vertically centers the content */
+    gap: 2rem; /* Adds space between navigation links and social icons */
+  }
+  
+  nav ul {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Aligns the list items horizontally */
+    gap: 1rem; /* Adds spacing between the list items */
+    margin: 0; /* Resets default margin for the list */
+    padding: 0; /* Resets default padding for the list */
+  }
+  
+ /* Default link style */
+/* Default link style */
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff; /* Default text color */
+  position: relative;
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Pink underline on hover */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Distance between text and underline */
+  left: 0;
+  width: 0; /* Start the underline at 0 width */
+  height: 3px; /* Thickness of the underline */
+  background-color: #940087; /* Pink underline */
+  transition: width 0.3s ease; /* Smooth transition for underline width */
+}
+
+/* On hover, show underline */
+nav ul li a:hover::after {
+  width: 100%; /* Expand the underline to full width */
+}
+
+/* Active link style */
+nav ul li a.active {
+  color: #940087; /* Change text color for the active link */
+}
+
+nav ul li a.active::after {
+  width: 100%; /* Keep the underline fully expanded for active link */
+}
+
+  
+.social-icons {
+  display: flex;
+  gap: 1rem; /* Adds space between icons */
+  align-items: center;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* White icons by default */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+  filter: brightness(0) invert(0) sepia(1) saturate(6) hue-rotate(120deg); /* Color boost on hover */
+}
+
+/* Responsive Design */
+
+
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: black; /* Set background to black */
+  color: white; /* Set text color to white for better contrast */
+}
+
+.text-content {
+  flex: 1;
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+.text-content h1 span {
+  color: #940087;
+  text-shadow: 2px 2px 4px #fff9f9; /* Add your desired color for the span (e.g., Tomato) */
+  font-weight: bold; /* Make the span text bold */
+}
+
+.image-content {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 70%;
+  max-width: 300px; /* Default max width */
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  animation: fadeIn 2s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(225, 0, 255, 0.5);
+}
+
+/* Animated Image */
+.animated-image {
+  width: 50px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.animated-image:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { /* Tablets */
+  .image-content {
+    right: 3%;
+    width: 60%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) { /* Smaller tablets and large phones */
+  .image-content {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    width: 50%; /* Reduce width dynamically */
+    max-width: 180px; /* Further reduce size */
+    margin: 20px auto;
+  }
+  
+  .animated-image {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile screens */
+  .image-content {
+    width: 40%; /* Make the image even smaller */
+    max-width: 150px; /* Adjust max width for small devices */
+  }
+  
+  .animated-image {
+    width: 30px;
+  }
+}
+
+
+/* Responsive Design */
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-content {
+    order: 2; /* Move text content below the image */
+    margin-top: 20px;
+  }
+
+  .image-content {
+    width: 90%; /* Increase width on smaller screens */
+    right: 5%; /* Adjust right position for better centering */
+    max-width: 250px; /* Adjust max width */
+    position: relative; /* Avoid overlapping */
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  .text-content h1 {
+    font-size: 1.8rem; /* Reduce font size for better fit */
+  }
+
+  .image-content {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 200px; /* Further reduce max width */
+    right: 0; /* Center align */
+  }
+
+  .animated-image {
+    width: 40px; /* Reduce image size */
+  }
+
+  .animated-image:hover {
+    transform: scale(1.05); /* Slightly smaller scale effect */
+  }
+}
+
+  
+  h1,h2, p {
+    animation: fade-in 1.5s ease-out forwards;
+    opacity: 0;
+    left: 20;
+    padding-left: 5%;
+    transform: translateX(-30px);
+  }
+  
+  h1 {
+    font-size: 75px;
+    
+    animation-delay: 0.5s;
+  }
+  
+  h2 {
+    font-size: 45px;
+    animation-delay: 1s;
+  }
+  
+  p {
+    font-size: 25px;
+    animation-delay: 1.5s;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  button a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+  }
+  
+  button:hover {
+    background-color: #333333b3;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    background-color:#940087;
+
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .download-btn {
+    background-color: #940087; /* Initial background color */
+    color: white; /* Initial text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  .download-btn:hover {
+    background-color: #9400888b;
+  }
+  /* Click effect */
+  .clicked {
+    background-color: #1abc9c; /* Color after clicking */
+    color: #000; /* Text color after clicking */
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fade-in-img 1s ease-out forwards;
+    animation-delay: 2s;
+  }
+  
+  @keyframes slide-in-left {
+    10% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 2; }
+  }
+  
+  @keyframes slide-in-right {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fade-in-img {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  #about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #000; /* Set background to black */
+    color: white; /* Set text color to white for contrast */
+  }
+  
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .about-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.1);
+  }
+  
+  .about-content {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+ 
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd; /* Light gray color for the paragraph */
+  }
+  
+ 
+  .education-container {
+    background-color: black; /* Set background to black */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Optional: Add rounded corners */
+  }
+  .projects-section {
+    padding: 50px;
+    background-color: #000; /* Black background */
+    color: #fff;
+    text-align: center;
+  }
+  
+  .projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  .projects-section p {
+    text-align: left; /* Align text to the left */
+    font-size: 0.9rem; /* Adjust the font size to make it smaller */
+    line-height: 1.5; /* Add some spacing between lines for better readability */
+    margin-top: 10px; /* Add a little spacing above the text */
+    color: #ccc; /* Optional: Change the color to a lighter shade for a subtle look */
+  }
+  
+  
+  .projects-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Horizontal scrolling */
+    padding: 20px;
+    background-image: url('image/grass-background.jpg'); /* Grass background */
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    scroll-behavior: smooth;
+ /* Hide vertical scrollbar */
+  }
+  
+  .project-card {
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent card background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .project-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .projects-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .projects-container::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+  }
+  
+  .projects-container::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
+ 
+
+  /* General Section Styling */
+/* General Section Styling */
+#contact {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 20px;
+  position: relative; /* Ensure relative positioning for the image container */
+}
+
+/* Hire Me Heading */
+.hire-me-heading {
+  font-size: 2.5rem;
+  color: #940087;
+  text-align: left;
+  text-shadow: 2px 2px 4px #810072;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* Hire Me Content Styling */
+.hire-me-content {
+  text-align: left;
+  line-height: 150%;
+  margin-bottom: 40px;
+}
+
+.hire-me-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.hire-me-content a {
+  color: #1abc9c; /* Link color */
+  text-decoration: none;
+}
+
+.hire-me-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* For Tablets and Smaller Devices */
+@media (max-width: 768px) {
+  .hire-me-heading {
+    font-size: 2rem; /* Reduce heading size for tablets */
+    text-align: center; /* Center-align heading */
+  }
+
+  .hire-me-content {
+    text-align: center; /* Center-align content */
+    margin-bottom: 30px; /* Adjust spacing */
+  }
+
+  .hire-me-content p {
+    font-size: 18px; /* Reduce font size for better readability */
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  #contact {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .hire-me-heading {
+    font-size: 1.8rem; /* Further reduce heading size for mobiles */
+    letter-spacing: 1px; /* Adjust letter spacing */
+  }
+
+  .hire-me-content p {
+    font-size: 16px; /* Reduce paragraph font size for compact design */
+    line-height: 1.4; /* Adjust line height */
+  }
+
+  .hire-me-content a {
+    font-size: 16px; /* Adjust link font size */
+  }
+}
+
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  position: relative; /* Ensure relative positioning for the image container */
+}
+
+.contact-form-container {
+  background: #222; /* Dark container for form */
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.536);
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form-container h2 {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  line-height: 100%;
+  font-size: 2rem;
+  color: #940087;
+  text-align: left;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background: #333;
+  border: 1px solid #fff1f1;
+  border-radius: 5px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ffffff;
+}
+
+.contact-form button.submit-btn {
+  background-color: #940087;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button.submit-btn:hover {
+  background-color: #99008cb5;
+}
+
+/* Contact Image Styling */
+.contact-image-container {
+  width: 40%;
+  height: 100%; /* Adjust width to suit your design */
+  max-width: 250px; /* Limit max width */
+  position: absolute;
+  right: 200px; /* Space from the right edge */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Perfectly center vertically */
+  z-index: 1; /* Ensure the image appears above other elements */
+}
+
+.contact-image {
+  width: 100%; /* Make image responsive */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 10px rgba(159, 156, 156, 0.2); /* Optional shadow for a clean look */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .contact-form-container {
+    padding: 40px; /* Adjust padding for smaller screens */
+  }
+
+  .contact-image-container {
+    position: relative;
+    width: 70%; /* Adjust width */
+    max-width: 300px; /* Limit max width */
+    right: 0; /* Reset right positioning */
+    top: 0; /* Reset top positioning */
+    transform: translateY(0); /* Reset translation */
+    margin-top: 20px; /* Add spacing between form and image */
+  }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 20px; /* Reduce padding for compact screens */
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.5rem; /* Adjust font size */
+    text-align: center; /* Center-align the heading */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem; /* Adjust font size for inputs */
+    padding: 8px; /* Reduce padding */
+  }
+
+  .contact-form button.submit-btn {
+    font-size: 0.9rem; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust button padding */
+  }
+
+  .contact-image-container {
+    width: 100%; /* Full width for the image */
+    max-width: 200px; /* Smaller max width */
+    margin-top: 15px; /* Space above the image */
+  }
+}
+
+/* Footer Container Styling */
+footer {
+  background-color: #111010; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 5px; /* Padding for top and bottom */
+  font-family: Arial, sans-serif; /* Font for footer */
+}
+
+/* Footer Content Container */
+.footer-container {
+  text-align: center; /* Center align text */
+}
+
+/* Footer Text Styling */
+.footer-container p {
+  font-size: 1rem;
+  margin-bottom: 20px; /* Add space below the text */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Social Links Styling */
+.footer-container .social-links {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  gap: 20px; /* Space between links */
+  margin-top: 10px; /* Space above the social links */
+}
+
+/* Social Link Styling */
+.footer-container .social-links a {
+  color: #fff; /* White color for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Slightly larger font for better visibility */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover Effect for Social Links */
+.footer-container .social-links a:hover {
+  color: #1abc9c; /* Color change on hover (teal) */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (tablets and smaller devices) */
+@media (max-width: 768px) {
+  footer {
+    padding: 10px; /* Increase padding for better spacing on smaller screens */
+  }
+
+  .footer-container p {
+    font-size: 0.9rem; /* Reduce font size */
+    margin-bottom: 15px; /* Reduce space below the text */
+  }
+
+  .footer-container .social-links {
+    gap: 15px; /* Reduce spacing between links */
+    margin-top: 5px; /* Reduce space above the links */
+  }
+
+  .footer-container .social-links a {
+    font-size: 1rem; /* Reduce link size slightly */
+  }
+}
+
+/* For screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+  .footer-container p {
+    font-size: 0.8rem; /* Further reduce font size */
+    margin-bottom: 10px; /* Reduce space below the text */
+  }
+
+  .footer-container .social-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px; /* Adjust spacing between stacked links */
+  }
+
+  .footer-container .social-links a {
+    font-size: 0.9rem; /* Adjust link size for small screens */
+  }
+}
